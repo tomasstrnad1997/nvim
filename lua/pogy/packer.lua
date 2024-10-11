@@ -43,4 +43,5 @@ return require('packer').startup(function(use)
       "kristijanhusak/vim-dadbod-completion",
       "kristijanhusak/vim-dadbod-ui",
   }
+  -- use {"lewis6991/gitsigns.nvim"}
 end)
