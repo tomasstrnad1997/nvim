@@ -33,7 +33,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>q", ":s/\\(True\\|False\\)/\\=submatch(1)=='True'?'False':'True'/<Bar>:normal!<CR>", {noremap = true, silent = true})
-vim.keymap.set("v", "<leader>q", ":s/\\(True\\|False\\)/\\=submatch(1)=='True'?'False':'True'/g<Bar>:normal!<CR>", {noremap = true, silent = true})
+-- vim.keymap.set("n", "<leader>q", ":s/\\(True\\|False\\)/\\=submatch(1)=='True'?'False':'True'/<Bar>:normal!<CR>", {noremap = true, silent = true})
+-- vim.keymap.set("v", "<leader>q", ":s/\\(True\\|False\\)/\\=submatch(1)=='True'?'False':'True'/g<Bar>:normal!<CR>", {noremap = true, silent = true})
 
 vim.keymap.set("n", "<leader>mmm", 'Goif name == "__main__":<CR>')
