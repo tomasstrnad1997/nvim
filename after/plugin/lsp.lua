@@ -59,8 +59,6 @@ require('mason-lspconfig').setup({
 		end
 	},
 })
--- require("luasnip.loaders.from_vscode").lazy_load()
-require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/after/snippets/"})
 vim.diagnostic.config({
     virtual_text = true
 })

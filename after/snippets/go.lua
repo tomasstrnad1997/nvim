@@ -1,10 +1,10 @@
 return {
-    s("ife", {
+    s({trig="ifer", snippetType="autosnippet"}, {
         t({"if err != nil {", "\t"}),
         i(1),
         t({"", "}"})
     }),
-    s("func", {
+    s({trig="func"}, {
         t("func "),i(1),t"(", i(2), t") ",
         c(3,{
             t"error ",
