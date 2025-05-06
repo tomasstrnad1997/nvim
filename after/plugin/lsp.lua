@@ -39,9 +39,17 @@ lsp_zero.format_on_save({
     }
 })
 require('mason').setup({})
+require('mason-lspconfig').setup()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 require('mason-lspconfig').setup({
 	ensure_installed = {"lua_ls"},
 	handlers = {
+        function (server_name)
+            require('lspconfig')[server_name].setup({
+            capabilities = capabilities,
+            on_attach = lsp_zero.on_attach,
+            })
+        end,
 		lsp_zero.default_setup,
 		lua_ls = function ()
 			require("lspconfig").lua_ls.setup({
@@ -51,29 +59,9 @@ require('mason-lspconfig').setup({
 		end
 	},
 })
-
-local cmp = require('cmp')
-local cmp_action = require('lsp-zero').cmp_action()
-local cmp_select = {behavior = cmp.SelectBehavior}
-
-cmp.setup({
-	mapping = cmp.mapping.preset.insert({
-		['<C-space>'] = cmp.mapping.confirm({select=true}),
-
-		['<C-b>'] = cmp.mapping.complete(),
-		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-	})
-})
-
-
-
+-- require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/after/snippets/"})
 vim.diagnostic.config({
     virtual_text = true
 })
 
-cmp.setup.filetype({ "mysql" }, {
-    sources = {
-        { name = "vim-dadbod-completion" },
-    },
-})

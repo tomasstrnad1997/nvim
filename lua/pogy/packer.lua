@@ -36,6 +36,8 @@ return require('packer').startup(function(use)
 		  {'hrsh7th/nvim-cmp'},
 		  {'hrsh7th/cmp-nvim-lsp'},
 		  {'L3MON4D3/LuaSnip'},
+          {'saadparwaiz1/cmp_luasnip'},
+          {'rafamadriz/friendly-snippets'}
 	  }
   }
   use {
@@ -44,5 +46,6 @@ return require('packer').startup(function(use)
       "kristijanhusak/vim-dadbod-ui",
   }
   use {"chentoast/marks.nvim"}
+  use {"mbbill/undotree"}
   -- use {"lewis6991/gitsigns.nvim"}
 end)

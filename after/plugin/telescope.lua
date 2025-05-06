@@ -22,6 +22,7 @@ vim.keymap.set('n', '<leader>ps', builtin.spell_suggest, {})
 vim.keymap.set('n', '<leader>pm', builtin.marks, {})
 vim.keymap.set('n', '<leader>qf', builtin.quickfix, {})
 vim.keymap.set('n', '<leader>ma', builtin.keymaps, {})
+vim.keymap.set('n', '<leader>pw', builtin.lsp_document_symbols, {})
 
 
 
