@@ -55,10 +55,19 @@ require('mason-lspconfig').setup({
 			require("lspconfig").lua_ls.setup({
 				settings = {Lua = {diagnostics = { globals = {"vim"}}}
 			}
-		})
-		end
+		    })
+		end,
+		gopls = function ()
+			require("lspconfig").gopls.setup({
+				settings = {gopls={
+                    usePlaceholders=true,
+                    completeUnimported=true
+                }}
+		    })
+		end,
 	},
 })
+
 vim.diagnostic.config({
     virtual_text = true
 })
