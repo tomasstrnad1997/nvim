@@ -37,3 +37,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- vim.keymap.set("v", "<leader>q", ":s/\\(True\\|False\\)/\\=submatch(1)=='True'?'False':'True'/g<Bar>:normal!<CR>", {noremap = true, silent = true})
 
 vim.keymap.set("n", "<leader>mmm", 'Goif name == "__main__":<CR>')
+
+-- disable omni sql maps to ensure that <C-c> works
+vim.g.omni_sql_no_default_maps = 1

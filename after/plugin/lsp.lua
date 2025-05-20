@@ -15,20 +15,6 @@ lsp_zero.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
-lsp_zero.configure('pylsp', {
-    settings = {
-        pylsp = {
-            plugins = {
-                pycodestyle = {
-                    maxLineLength=120
-                },
-                rope_autoimport = {
-                    enabled = false
-                },
-            }
-        }
-    }
-})
 lsp_zero.format_on_save({
     format_opts = {
         async = false,
@@ -51,6 +37,22 @@ require('mason-lspconfig').setup({
             })
         end,
 		lsp_zero.default_setup,
+        pylsp = function ()
+			require("lspconfig").pylsp.setup({
+                settings = {
+                    pylsp ={
+                        plugins = {
+                            pycodestyle = {
+                                maxLineLength = 120
+                            },
+                            rope_autoimport = {
+                                enabled = false
+                            }
+                        }
+                    }
+                }
+		    })
+        end,
 		lua_ls = function ()
 			require("lspconfig").lua_ls.setup({
 				settings = {Lua = {diagnostics = { globals = {"vim"}}}
